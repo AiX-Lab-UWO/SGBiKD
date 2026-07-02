@@ -56,3 +56,30 @@ compare_vis_optionA_4models/
 │   ├── yolo26x/
 │   └── yolov8x-worldv2/
 └── mosaic/
+
+# Ablation Code Layout
+
+This folder collects the ablation-facing code into a cleaner structure without
+breaking the original scripts in the repo root.
+
+## Structure
+
+- `teachers/`
+  - wrappers for the saliency teachers used in KD experiments
+  - currently includes `W3DA` and `S-ViT / SCF-ViT`
+- `students/`
+  - student-detector builders and validation helpers
+- `kd/`
+  - reusable KD head definitions
+  - reverse-KD helper functions and scheduling utilities
+- `experiments/`
+  - clean entrypoints that forward to the existing experiment scripts
+
+## Recommended entrypoints
+
+- `python -m ablation.experiments.compare_teachers`
+- `python -m ablation.experiments.compare_students`
+- `python -m ablation.experiments.profile_inference_only`
+- `python -m ablation.experiments.profile_deploy_only`
+- `python -m ablation.experiments.profile_kd_heads`
+- `python -m ablation.experiments.profile_students_only`
