@@ -48,7 +48,7 @@ For every sampled frame, the generated overlays include:
 
 The output is saved under:
 
-```text
+
 compare_vis_optionA_4models/
 ├── per_model/
 │   ├── yolo11x/
@@ -56,6 +56,7 @@ compare_vis_optionA_4models/
 │   ├── yolo26x/
 │   └── yolov8x-worldv2/
 └── mosaic/
+
 
 # Ablation Code Layout
 
